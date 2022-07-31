@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="shortcut icon" href="../../assets/img/icon/icon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3bc23dfd53.js" crossorigin="anonymous"></script>
+
+    <title>Area de Trabalho - Gastos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light p-2 menu-workspace">
+            <div class="container-fluid">
+                <a href="area_trabalho.html">
+                    <img src="../../assets/img/logo_trabalho.svg" width="80" height="80"
+                        class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+                        <li class="nav-item m-2">
+                            <a class="nav-link " data-bs-toggle="modal" data-bs-target="#agenda-modal"
+                                aria-current="page"><i class="fas fa-book-open"></i></a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fas fa-user-plus"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item m-2">
+                            <a class="nav-link" href="../log_out.html"><i class="fas fa-sign-out-alt"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid area-trabalho-page">
+        <div class="row">
+            <aside class="col-3 side-menu stick-top">
+                <a href="area_trabalho.html">
+                    <li class="d-flex align-items-center">
+                        <h4> <i class="fas fa-home"></i> Inicial </h4>
+                    </li>
+                </a>
+                <a href="cliente_lista.html">
+                    <li class="d-flex align-items-center ativo">
+                        <h4> <i class="fas fa-user-alt"></i> Clientes </h4>
+                    </li>
+                </a>
+                <a href="agenda_cadastro.html">
+                    <li class="d-flex align-items-center">
+                        <h4> <i class="fas fa-book-open"></i> Agenda </h4>
+                    </li>
+                </a>
+                <a href="gastos_contas.html">
+                    <li class="d-flex align-items-center">
+                        <h4> <i class="fas fa-money-check-alt"></i> Contas & Gastos
+                    </li>
+                    </h4>
+                </a>
+            </aside>
+            <div class="col-9 area-trabalho">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 my-3">
+                            <h1>Contas a Pagar e Gastos do Escritório</h1>
+                        </div>
+                        <div class="col-md-12">
+                            <h2>Cadastro contas a pagar | pagas</h2>
+                            <div>
+                                <form action="cad_contas.php" class="row">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputNomeConta" class="form-label">Nome da conta</label>
+                                                <input type="text" class="form-control" id="inputNomeConta"
+                                                    name="nome-conta" placeholder="Exp: Vivo">
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputTipoServico" class="form-label">Tipo de serviço</label>
+                                                <select id="inputTipoServico" class="form-select" name="tipo-servico-conta">
+                                                    <option value="#" selected>--Selecione um tipo de Serviço--
+                                                    </option>
+                                                    <option value="Água">Água</option>
+                                                    <option value="Luz">Luz</option>
+                                                    <option value="Telefone / Internet">Telefone / Internet</option>
+                                                    <option value="Boleto Avulso">Boleto Avulso</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputValorConta" class="form-label">Valor da conta</label>
+                                                <input type="text" class="form-control" id="inputValorConta"
+                                                    name="valor-conta" value="R$ " placeholder="Exp: R$ 200.00">
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputValidadeConta" class="form-label">Validade da conta</label>
+                                                <input type="date" class="form-control" id="inputValidadeConta"
+                                                    name="validade-conta" value="R$" placeholder="Exp: 10/10/2022">
+                                            </div>
+                                            <div class="form-check form-switch my-2">
+                                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pagamento-efetuado">
+                                                <label class="form-check-label" for="flexSwitchCheckDefault">Já pago ?</label>
+                                              </div>
+                                            <div class="d-grid gap-2 my-2">
+                                                <button type="submit" class="btn btn-outline-dark btn-lg"
+                                                    type="button">Cadastrar Conta</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h2>Cadastro de gastos</h2>
+                            <div>
+                                <form action="cad_gastos.php" class="row">
+                                    <div class="card">
+                                        <div class="card-body row">
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputLocal" class="form-label">Local onde foi efeutado a compra</label>
+                                                <input type="text" class="form-control" id="inputLocal"
+                                                    name="local-gasto" placeholder="Exp: Vivo">
+                                            </div>
+                                            <div class="col-md-3 my-2">
+                                                <label for="inputMesGasto" class="form-label">Mês da nota</label>
+                                                <select id="inputMesGasto" class="form-select" name="mes-gasto">
+                                                    <option value="#" selected>--Selecione um mês--
+                                                    </option>
+                                                    <option value="Janeiro">Janeiro</option>
+                                                    <option value="Fevereiro">Fevereiro</option>
+                                                    <option value="Março">Março</option>
+                                                    <option value="Abril">Abril</option>
+                                                    <option value="Maio">Maio</option>
+                                                    <option value="Junho">Junho</option>
+                                                    <option value="Julho">Julho</option>
+                                                    <option value="Agosto">Agosto</option>
+                                                    <option value="Setembro">Setembro</option>
+                                                    <option value="Outubro">Outubro</option>
+                                                    <option value="Novembro">Novembro</option>
+                                                    <option value="Dezembro">Dezembro</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-3 my-2">
+                                                <label for="inputanoGasto" class="form-label">Ano do gasto</label>
+                                                <select id="inputanoGasto" class="form-select" name="ano-gasto">
+                                                    <option value="#" selected>--Selecione um ano--
+                                                    </option>
+                                                    <option value="2021">2021</option>
+                                                    <option value="2022">2022</option>
+                                                    <option value="2023">2023</option>
+                                                    <option value="2024">2024</option>
+                                                    <option value="2025">2025</option>
+                                                    <option value="2026">2026</option>
+                                                    <option value="2027">2027</option>
+                                                    <option value="2028">2028</option>
+                                                    <option value="2029">2029</option>
+                                                    <option value="2030">2030</option>
+                                                    <option value="2031">2031</option>
+                                                    <option value="2032">2032</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <label for="inputValorNota" class="form-label">Valor da nota</label>
+                                                <input type="text" class="form-control" id="inputValorNota"
+                                                    name="valor-nota" value="R$ " placeholder="Exp: R$ 200.00">
+                                            </div>
+                                            <div class="col-md-6 d-flex align-items-end justify-content-end my-2">
+                                                <button type="submit" class="btn btn-outline-dark btn-lg"
+                                                    type="button">Cadastrar Conta</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-12 mb-2">
+                                    <h2 class="my-4">Contas a Pagar e Gastos</h2>
+                                    <div class="card card-client">
+                                        <h5 class="card-header">
+                                        </h5>
+                                        <div class="card-body">
+                                            <div class="col-md-12">
+                                                <div class="accordion" id="accordionExample">
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                                aria-controls="collapseOne">
+                                                                Contas do Mês
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <li>
+                                                                    Vivo - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-success">R$ 125.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    EDP - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-danger">R$ 125.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    SABESP - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-success">R$ 65.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vida e Cor - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-danger">R$ 225.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vivo - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-success">R$ 85.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vida e Cor - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-danger">R$ 225.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vivo - <strong>Validade: 20/02/2021</strong> - <strong
+                                                                        class="text-success">R$ 85.00</strong>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingTwo">
+                                                            <button class="accordion-button collapsed" type="button"
+                                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                                Gastos
+                                                            </button>
+                                                        </h2>
+                                                        <div id="collapseTwo" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                            <div class="accordion-body">
+                                                                <strong class="text-danger">Total: R$ 2500.00</strong>
+                                                                <li>
+                                                                    Lape - <strong class="text-danger">R$ 25.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Armarinho Fernando - <strong class="text-danger">R$
+                                                                        25.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vida e Cor - <strong class="text-danger">R$ 25.00</strong>
+                                                                </li>
+                                                                <li>
+                                                                    Vivo - <strong class="text-danger">R$ 25.00</strong>
+                                                                </li>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                            
+                                        </div>
+                                        <div class="card-footer">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+    <footer class=" m-5">
+        <p class="text-center disabled text-secondary">Desenvolvido por CMD - &copy; Todos direitos reservados a Araújo
+            Advocacia</p>
+    </footer>
+</body>
+<!-- Modal Agenda -->
+<div class="modal" id="agenda-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../../assets/img/modal/modal_agenda.png" alt="" class="img-fluid">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card m-2">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4>27 de Julho de 2021</h4>
+                        <a class="btn btn-danger" href="excluir_registro_agenda.html"><i
+                                class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Cliente - Laura Serafim - 12:00</h5>
+                        <p class="card-text">Assunto: Revisão da aposentadoria</p>
+                    </div>
+                </div>
+                <div class="card m-2">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4>27 de Julho de 2021</h4>
+                        <a class="btn btn-danger" href="excluir_registro_agenda.html"><i
+                                class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Buscar computador - Laura Serafim - 14:00</h5>
+                        <p class="card-text">Assunto: Buscar o computador que estava com problema</p>
+                    </div>
+                </div>
+                <div class="card m-2">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4>27 de Julho de 2021</h4>
+                        <a class="btn btn-danger" href="excluir_registro_agenda.html"><i
+                                class="fas fa-trash-alt"></i></a>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Audiência - 16:00</h5>
+                        <p class="card-text">Assunto: Audiência - Forum Cível - 84ª Vara da Família</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="agenda_cadastro.html" class="btn btn-outline-dark">Adicionar nova agenda</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Cadastro Cliente -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../../assets/img/modal/modal_ficha.png" alt="" class="img-fluid">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body container-fluid">
+                <form action="#" method="#">
+                    <fieldset class="row g-3">
+                        <legend>
+                            <h4>Dados Pessoais</h4>
+                        </legend>
+                        <div class="col-md-8">
+                            <label for="inputName" class="form-label">Nome Completo</label>
+                            <input type="name" class="form-control" id="inputName" name="nome"
+                                placeholder="Digite o nome do cliente">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputAreaAtuacao" class="form-label">Área de atuação</label>
+                            <select id="inputAreaAtuacao" class="form-select" name="area-atuacao">
+                                <option value="#" selected>--Selecione uma área de Atuação (a)</option>
+                                <option value="Civel">Cível</option>
+                                <option value="Divorciado (a)">Trabalhista</option>
+                                <option value="Previdênciario">Previdênciario</option>
+                                <option value="Arquivo Morto">Arquivo Morto</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputNameProfissao" class="form-label">Profissão</label>
+                            <input type="name" class="form-control" id="inputNameProfissao" name="profissao"
+                                placeholder="Digite a profissão do cliente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
+                            <select id="inputEstadoCivil" class="form-select" name="estado-civil">
+                                <option value="Solteiro (a)" selected>Solteiro (a)</option>
+                                <option value="Casado (a)">Casado (a)</option>
+                                <option value="Divorciado (a)">Divorciado (a)</option>
+                                <option value="Viúvo (a)">Viúvo (a)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputDataNasc" class="form-label">Data de nascimento</label>
+                            <input type="date" class="form-control" id="inputDataNasc" name="data-nasc"
+                                placeholder="20/09/1999">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNameFather" class="form-label">Nome do Pai</label>
+                            <input type="text" class="form-control" id="inputNameFather"
+                                placeholder="Digite o nome do pai" name="nome-pai">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNameMother" class="form-label">Nome da Mãe</label>
+                            <input type="text" class="form-control" id="inputNameMother"
+                                placeholder="Digite o nome da mãe" name="nome-mae">
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo-cli" value="Masculino"
+                                    id="sexo-cli-masc">
+                                <label class="form-check-label" for="sexo-cli-masc">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo-cli" value="Feminino"
+                                    id="sexo-cli-fem">
+                                <label class="form-check-label" for="sexo-cli-fem">
+                                    Feminino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNascionalidade" class="form-label">Nascionalidade</label>
+                            <input type="text" class="form-control" id="inputNascionalidade" name="nascionalidade"
+                                placeholder="Brasileira">
+                        </div>
+                        <legend>
+                            <h4>Endereço</h4>
+                        </legend>
+                        <div class="col-md-6">
+                            <label for="inputLogradouro" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="inputLogradouro" name="logradouro"
+                                placeholder="Rua Mario Cézar, 350">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputBairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro" name="bairro"
+                                placeholder="Jardim Mario Junior">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="inputCidade" name="cidade"
+                                placeholder="São Paulo">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputEstado" class="form-label">Estado</label>
+                            <select id="inputEstado" class="form-select" name="estado">
+                                <option value="AC" selected>Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="DF">Distrito Federal</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCEP" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="inputCEP" name="cep" placeholder="0000-000">
+                        </div>
+                        <legend>
+                            <h4>Documentos</h4>
+                        </legend>
+                        <div class="col-md-4">
+                            <label for="inputRG" class="form-label">RG</label>
+                            <input type="text" class="form-control" id="inputRG" name="rg" placeholder="00.000.000-00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCPF" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="inputCPF" name="cpf"
+                                placeholder="000.000.000-00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTE" class="form-label">Título de Eleitor</label>
+                            <input type="text" class="form-control" id="inputTe" name="te" placeholder="00000000000">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPis" class="form-label">Número do PIS</label>
+                            <input type="text" class="form-control" id="inputPis" name="pis"
+                                placeholder="0043 5687 09 06">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCTPS" class="form-label">CTPS</label>
+                            <input type="text" class="form-control" id="inputCTPS" name="ctps" placeholder="0987">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputSerie" class="form-label">Série</label>
+                            <input type="text" class="form-control" id="inputSerie" name="serie" placeholder="00123-SP">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputNit" class="form-label">Número do NIT</label>
+                            <input type="text" class="form-control" id="inputNit" name="nit"
+                                placeholder="0043 5687 09 06">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCRAS" class="form-label">CRAS</label>
+                            <input type="text" class="form-control" id="inputCRAS" name="cras" placeholder="0987">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputSenhaINSS" class="form-label">Senha INSS</label>
+                            <input type="text" class="form-control" id="inputSenhaINSS" name="senha-inss"
+                                placeholder="00123-SP">
+                        </div>
+                        <legend>
+                            <h4>Contato</h4>
+                        </legend>
+                        <div class="col-md-12">
+                            <label for="inputEmail" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" id="inputEmail" name="email"
+                                placeholder="client01@example.com">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTel01" class="form-label">Telefone 01</label>
+                            <input type="text" class="form-control" id="inputTel01" name="phone-01"
+                                placeholder="(99) 8765-4321">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTel02" class="form-label">Telefone 02</label>
+                            <input type="text" class="form-control" id="inputTel02" name="phone-02"
+                                placeholder="(99) 9765-4321">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCel" class="form-label">Celular </label>
+                            <input type="text" class="form-control" id="inputCel" name="cel"
+                                placeholder="(99) 99765-4321">
+                        </div>
+                        <h4>Trabalhista</h4>
+                        <div class="col-md-12">
+                            <label for="inputNameEmp" class="form-label">Nome da Reclamada</label>
+                            <input type="name" class="form-control" id="inputNameEmp" name="nome-empresa"
+                                placeholder="Digite o nome da reclamada">
+                        </div>
+                        <legend>
+                            <h4>Endereço Reclamada</h4>
+                        </legend>
+                        <div class="col-md-6">
+                            <label for="inputLogradouroEmp" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="inputLogradouroEmp" name="logradouro-empresa"
+                                placeholder="Rua Mario Cézar, 350">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputBairroEmp" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairroEmp" name="bairro-empresa"
+                                placeholder="Jardim Mario Junior">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCidadeEmp" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="inputCidadeEmp" name="cidade-empresa"
+                                placeholder="São Paulo">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputEstadoEmp" class="form-label">Estado</label>
+                            <select id="inputEstadoEmp" class="form-select" name="estado-empresa">
+                                <option value="AC" selected>Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="DF">Distrito Federal</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCEPEmp" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="inputCEPEmp" name="cep-empresa"
+                                placeholder="0000-000">
+                        </div>
+                        <legend>
+                            <h4>Função e Horário</h4>
+                        </legend>
+                        <div class="col-md-6">
+                            <label for="inputUltimaFuncao" class="form-label">Última Função</label>
+                            <input type="text" class="form-control" id="inputUltimaFuncao" name="ultima-funcao"
+                                placeholder="Torneiro Mecânico">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputUltimoSalario" class="form-label">Último Salário</label>
+                            <input type="text" class="form-control" id="inputUltimoSalario" name="ultimo-salario"
+                                placeholder="R$ 11000.00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputDataAdmissao" class="form-label">Data de Admissão</label>
+                            <input type="date" class="form-control" id="inputDataAdmissao" name="data-admissao"
+                                placeholder="20/09/2010">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputDataSaida" class="form-label">Data de Saída</label>
+                            <input type="date" class="form-control" id="inputDataSaida" name="data-saida"
+                                placeholder="20/09/2020">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputDataFerias" class="form-label">Data de Dissídio Coletivo</label>
+                            <input type="date" class="form-control" id="inputDataFerias" name="data-ferias"
+                                placeholder="20/09/1999">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputHorarioTrabalho" class="form-label">Horário de Trabalho</label>
+                            <input type="text" class="form-control" id="inputHorarioTrabalho" name="horario-trabalho"
+                                placeholder="16:00 até 23:00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputHorasExtras" class="form-label">Horas Extras</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="horas-extras" value="Sim"
+                                    id="horas-extras-s">
+                                <label class="form-check-label" for="horas-extras-s">
+                                    Sim
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="horas-extras" value="Não"
+                                    id="horas-extras-n">
+                                <label class="form-check-label" for="horas-extras-n">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputHorarioTrabalhoExtra" class="form-label">Horário</label>
+                            <input type="text" class="form-control" id="inputHorarioTrabalhoExtra"
+                                name="horario-trabalho-extra" placeholder="16:00 até 23:00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputHorarioTrabalhoRegime" class="form-label">Qual o regime de horas de
+                                trabalho</label>
+                            <input type="text" class="form-control" id="inputHorarioTrabalhoRegime"
+                                name="horario-trabalho-regime" placeholder="16:00 até 23:00">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputUltimoSalario" class="form-label">Trabalhava aos Sábados</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="trabalhava-sabado" value="Sim"
+                                    id="trabalhava-sabado-s">
+                                <label class="form-check-label" for="trabalhava-sabado-s">
+                                    Sim
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="trabalhava-sabado" value="Não"
+                                    id="trabalhava-sabado-n">
+                                <label class="form-check-label" for="trabalhava-sabado-n">
+                                    Não
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputHorarioTrabalhoSabado" class="form-label">Horário</label>
+                            <input type="text" class="form-control" id="inputHorarioTrabalhoSabado"
+                                name="horario-trabalho-sabado" placeholder="16:00 até 23:00">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputCondicaoTrabalho" class="form-label">Última Função</label>
+                            <input type="text" class="form-control" id="inputCondicaoTrabalho" name="condicao-trabalho"
+                                placeholder="Precária">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputProduto" class="form-label">Laborava qual tipo de produto</label>
+                            <input type="text" class="form-control" id="inputProduto" name="produto-trabalho"
+                                placeholder="...">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="exampleFormControlTextarea1" class="form-label">Observações</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10"
+                                cols="100"></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputEncaminhamento" class="form-label">Encaminhamento</label>
+                            <input type="text" class="form-control" id="inputEncaminhamento" name="encaminhamento"
+                                placeholder="...">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Perfil Básico Cliente -->
+<div class="modal fade" id="exampleModalPerfil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="../../assets/img/modal/modal_ficha.png" alt="" class="img-fluid">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body container-fluid">
+                <form action="#" method="#">
+                    <fieldset class="row g-3">
+                        <legend>
+                            <h4>Dados Pessoais</h4>
+                        </legend>
+                        <div class="col-md-8">
+                            <label for="inputName" class="form-label">Nome Completo</label>
+                            <input type="name" class="form-control" id="inputName" value="Maria do Socorro"
+                                placeholder="Digite o nome do cliente" disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputAreaAtuacao" class="form-label">Área de atuação</label>
+                            <select id="inputAreaAtuacao" class="form-select" name="area-atuacao" disabled readonly>
+                                <option value="#">--Selecione uma área de Atuação (a)</option>
+                                <option value="Civel" selected>Cível</option>
+                                <option value="Divorciado (a)">Trabalhista</option>
+                                <option value="Previdênciario">Previdênciario</option>
+                                <option value="Arquivo Morto">Arquivo Morto</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="inputNameProfissao" class="form-label">Profissão</label>
+                            <input type="name" class="form-control" id="inputNameProfissao" name="profissao"
+                                value="Motorista" readonly disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEstadoCivil" class="form-label">Estado Civil</label>
+                            <select id="inputEstadoCivil" class="form-select" disabled readonly>
+                                <option value="Solteiro (a)" selected>Solteiro (a)</option>
+                                <option value="Casado (a)">Casado (a)</option>
+                                <option value="Divorciado (a)">Divorciado (a)</option>
+                                <option value="Viúvo (a)">Viúvo (a)</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputDataNasc" class="form-label">Data de nascimento</label>
+                            <input type="date" class="form-control" id="inputDataNasc" value="20/10/2000" disabled
+                                readonly placeholder="20/09/1999">
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNameFather" class="form-label">Nome do Pai</label>
+                            <input type="text" class="form-control" id="inputNameFather"
+                                placeholder="Digite o nome do pai" value="Arcenio" disabled readonly>
+                        </div>
+                        <div class="col-12">
+                            <label for="inputNameMother" class="form-label">Nome da Mãe</label>
+                            <input type="text" class="form-control" id="inputNameMother"
+                                placeholder="Digite o nome da mãe" value="Rosa" disabled readonly>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo-cli" value="Masculino"
+                                    id="sexo-cli-masc" checked disabled readonly>
+                                <label class="form-check-label" for="sexo-cli-masc">
+                                    Masculino
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="sexo-cli" value="Feminino"
+                                    id="sexo-cli-fem">
+                                <label class="form-check-label" for="sexo-cli-fem" disabled readonly>
+                                    Feminino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputNascionalidade" class="form-label">Nascionalidade</label>
+                            <input type="text" class="form-control" id="inputNascionalidade" value="Brasileira"
+                                placeholder="Brasileira" disabled readonly>
+                        </div>
+                        <legend>
+                            <h4>Endereço</h4>
+                        </legend>
+                        <div class="col-md-6">
+                            <label for="inputLogradouro" class="form-label">Logradouro</label>
+                            <input type="text" class="form-control" id="inputLogradouro" name="logradouro"
+                                value="Rua Mario Cézar, 350" disabled readonly>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputBairro" class="form-label">Bairro</label>
+                            <input type="text" class="form-control" id="inputBairro" name="bairro"
+                                value="Jardim Mario Junior" disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCidade" class="form-label">Cidade</label>
+                            <input type="text" class="form-control" id="inputCidade" name="cidade" value="São Paulo"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputEstado" class="form-label">Estado</label>
+                            <select id="inputEstado" class="form-select" name="estado" disabled readonly>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP" selected>São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="DF">Distrito Federal</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCEP" class="form-label">CEP</label>
+                            <input type="text" class="form-control" id="inputCEP" name="cep" value="0000-000" disabled
+                                readonly>
+                        </div>
+                        <legend>
+                            <h4>Documentos</h4>
+                        </legend>
+                        <div class="col-md-4">
+                            <label for="inputRG" class="form-label">RG</label>
+                            <input type="text" class="form-control" id="inputRG" name="rg" value="00.000.000-00"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCPF" class="form-label">CPF</label>
+                            <input type="text" class="form-control" id="inputCPF" name="cpf" value="000.000.000-00"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTE" class="form-label">Título de Eleitor</label>
+                            <input type="text" class="form-control" id="inputTe" name="te" value="00000000000" disabled
+                                readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputPis" class="form-label">Número do PIS</label>
+                            <input type="text" class="form-control" id="inputPis" name="pis" value="0043 5687 09 06"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCTPS" class="form-label">CTPS</label>
+                            <input type="text" class="form-control" id="inputCTPS" name="ctps" value="0987" disabled
+                                readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputSerie" class="form-label">Série</label>
+                            <input type="text" class="form-control" id="inputSerie" name="serie" value="00123-SP"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputNit" class="form-label">Número do NIT</label>
+                            <input type="text" class="form-control" id="inputNit" name="nit" value="0043 5687 09 06"
+                                disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCRAS" class="form-label">CRAS</label>
+                            <input type="text" class="form-control" id="inputCRAS" name="cras" value="0987" disabled
+                                readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputSenhaINSS" class="form-label">Senha INSS</label>
+                            <input type="text" class="form-control" id="inputSenhaINSS" name="senha-inss"
+                                value="00123SP" disabled readonly>
+                        </div>
+                        <legend>
+                            <h4>Contato</h4>
+                        </legend>
+                        <div class="col-md-12">
+                            <label for="inputEmail" class="form-label">E-mail</label>
+                            <input type="text" class="form-control" id="inputEmail" name="email"
+                                value="client01@example.com" disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTel01" class="form-label">Telefone 01</label>
+                            <input type="text" class="form-control" id="inputTel01" name="phone-01"
+                                value="(99) 8765-4321" disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputTel02" class="form-label">Telefone 02</label>
+                            <input type="text" class="form-control" id="inputTel02" name="phone-02"
+                                value="(99) 9765-4321" disabled readonly>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="inputCel" class="form-label">Celular </label>
+                            <input type="text" class="form-control" id="inputCel" name="cel" value="(99) 99765-4321"
+                                disabled readonly>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-outline-secondary btn-lg" href="cliente_perfil.html">Ir até o perfil completo</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+    })
+</script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</html>

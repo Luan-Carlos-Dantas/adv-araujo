@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    box-sizing: border-box;
+    line-height: 1.5em;
+}
+
+@media (max-width: 500px)
+{
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 0.9em;
+    }
+    nav{
+        font-size: 1.5em;
+    }
+    h3{
+        font-size: 0.2em;
+    }
+    p{
+        font-size:2.5em;
+    }
+    .retirar{
+        display:none;
+    }
+    .imagem_logo{
+      display:none;
+    }
+    .card-index{
+      width: 20rem;
+    }
+    footer{
+        font-size: 0.3em;
+    }
+    .container{
+        font-size: 0.5em;
+    }
+    iframe{
+        width: 300px;
+        height: auto;
+    }
+
+}
+@media (min-width: 1336px){
+    iframe{
+        width: 600px;
+        height: 400px;
+    }
+}
+@media (min-width: 1600px)
+{
+  .card-index{
+      width: 30rem;
+  }
+  iframe{
+      width: 600px;
+      height: 450px;
+    }
+}
+h1{
+    color: #DFBD69;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Bebas Neue', sans-serif;
+    
+}
+h1,h3{
+   text-shadow: 2px 3px 2px #000000;
+}
+
+.links-uteis a{
+    text-decoration: none;
+}
+.institucional h2{
+    font-family: 'Bebas Neue', sans-serif;
+    text-shadow: 2px 3px 2px #000000;
+}
+
+.card-index h2{
+    font-family: 'Bebas Neue', sans-serif;
+    color: #737373;
+    text-shadow: 2px 3px 2px #fff;
+}
+p{
+    text-align: justify;
+}
+aside{
+    background-color: #000;
+    margin: 0;
+}
+table{
+    border-radius: 20px;
+}
+.contato a{
+    color: #fff;
+}
+
+.contato a:hover{
+    color: #E3EFFF;
+}
+#login{
+    background: #E3EFFF ;
+}
+
+.parallax{
+    background-image: url(../img/fundo_index.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.accordion-body{
+    font-size: 0.85em;
+}
+
+.area-trabalho-page h1,h2,h3,h4,h5,h6{
+    font-family: 'Hammersmith One', sans-serif;
+}
+.side-menu{
+    /* background-image: linear-gradient(to bottom, #1f2e3c, #1f2e3c,#1f2e3c, #3b3b3b, #ffffff); */
+    background-image: url(../img/aside-area-trabalho.png);
+    background-color: #E3EFFF;
+    background-repeat: no-repeat;
+}
+.area-trabalho{
+    background-image: url(../img/fundo_area_trabalho.png);
+    background-color: #1F2E3C ;
+    background-repeat: no-repeat;
+    /* background-image: linear-gradient(to bottom, #051937, #051937, #2f4861, #9cb2b9, #dfeaeb); */
+}
+.area-trabalho h1,h2{
+    text-shadow: 2px 3px 2px #000;
+    color: white;
+}
+.table-client{
+    font-size: 0.85em;
+}
+.table-client a{
+    font-size: 0.95em;
+}
+
+.side-menu li{
+    list-style: none;
+}
+.side-menu h4{
+    text-decoration: none;
+    color: black;
+    text-shadow: 2px 3px 2px #fff;
+}
+
+.side-menu a{
+    text-decoration: none;
+}
+
+.side-menu li{
+    display: block;
+    height: 50px;
+    padding: 10%;
+}
+
+.side-menu li:hover{
+    border-left: 15px solid #1F2E3C;
+    color: black;
+}
+.ativo{
+    color: black;
+    border-left: 15px solid #1F2E3C;
+}
+
+.modal-footer li{
+    list-style:square;
+    line-height: 1.8em;
+}
+
+.menu-workspace{
+    font-size:x-large;
+    /* background-color: #000000; */
+    background-image: linear-gradient(to bottom, #fff, #fff, #E3EFFF,#E3EFFF, #E3EFFF);
+
+}
+
+.card-img .card-header{
+    color: #000000;
+    background: #fff;
+}
+
+.card-img{
+    /* background-image: url(../img/card/card-agenda.png); */
+    opacity: 100;
+    height: 175px;
+    background-image: linear-gradient(to bottom, #000000, #000000, #1c181f, #1f2e3c, #1f2e3c);
+}
+
+.card-login{
+    background-image: url(../img/card/card-login.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.table-calendario tr td{
+    width: 80px ;
+    height: 80px;
+    border-left: 1px dotted black;
+}
+
+.table-calendario tr td a{
+    color: black;
+    text-decoration: none;
+}
+.table-calendario tr td:hover{
+   background-color: wheat
+}
+
+#login{
+    background-image: url(../img/fundo-login.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
