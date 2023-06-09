@@ -1,7 +1,7 @@
 # Advocacia Araújo & Silva
 <h2>Site desenvolvido para o escritório de advocacia que trabalhava</h2>
 
-<p style="text-align: center">
+<p align="center">
 <img src="https://github.com/Luan-Carlos-Dantas/advaraujoesilva.com.br/assets/109487706/5e4115ed-c67c-4759-a093-36e45c07a145" width="500">
 <img src="https://github.com/Luan-Carlos-Dantas/advaraujoesilva.com.br/assets/109487706/084982ad-fa7f-4c88-af9d-9491b6cd1bac" width="500">
 <img src="https://github.com/Luan-Carlos-Dantas/advaraujoesilva.com.br/assets/109487706/56345a46-542b-4e9c-9ce3-87acb3c4f56b" width="500">
